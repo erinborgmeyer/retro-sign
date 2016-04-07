@@ -31,6 +31,59 @@ svg {
   cursor: pointer;
 }
 
+.btn:active {
+  transform: scale(.9);
+  transform-origin: 350px 210px;
+}
+
+.btn path:nth-child(2) {
+  transition: all .25s ease;
+}
+
+.btn:hover path:nth-child(2) {
+  fill: #f60;
+}
+
+.is-engaged .btn path:nth-child(2) {
+  fill: #f60;
+}
+
 .lines path {
   stroke-dasharray: 0, 480;
+}
+
+.is-engaged .lines path {
+  animation: draw .5s linear forwards;
+}
+
+.engage path {
+  transition: all .25s linear .5s;
+}
+
+.enage path:nth-child(2),
+.enage path:nth-child(5) {
+  transition-delay: .55s;
+}
+
+.enage path:nth-child(3) {
+  transition-delay: .63s;
+}
+
+.enage path:nth-child(4) {
+  transition-delay: .65s;
+}
+
+.is-engaged .engage path {
+  fill: #f60;
+}
+
+@keyframes draw {
+
+  0% {
+    stroke-dasharray: 0, 480;
+  }
+
+  100% {
+    stroke-dasharray: 480, 480;
+  }
 }
